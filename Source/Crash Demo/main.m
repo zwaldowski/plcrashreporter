@@ -33,8 +33,9 @@
 #import <sys/sysctl.h>
 
 #include <Availability.h>
+#include <TargetConditionals.h>
 
-#if TARGET_IPHONE_OS
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import <UIKit/UIKit.h>
 @interface DemoCrashAppDelegate : NSObject <UIApplicationDelegate> @end
 @implementation DemoCrashAppDelegate
@@ -45,7 +46,7 @@
     return YES;
 }
 @end
-#endif /* TARGET_IPHONE_OS */
+#endif /* TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR */
 
 /* A custom post-crash callback */
 static void post_crash_callback (siginfo_t *info, ucontext_t *uap, void *context) {
@@ -144,11 +145,11 @@ int main (int argc, char *argv[]) {
      * The DemoCrash application serves as a test host; we simply look for the existence of the XCTest framework
      * and assume that, should it be available, we're running as a test harness.
      */
-#if TARGET_IPHONE_OS
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     if (NSClassFromString(@"XCTestCase") != nil) {
         return UIApplicationMain(argc, argv, nil, @"DemoCrashAppDelegate");
     }
-#endif /* TARGET_IPHONE_OS */
+#endif /* TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR */
 
     if (debugger_should_exit()) {
         NSLog(@"The demo crash app should be run without a debugger present. Exiting ...");
