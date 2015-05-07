@@ -551,21 +551,14 @@
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DB3676421AFC15D400C883CB;
-			remoteInfo = "CrashReporter-iOS-New";
+			remoteInfo = "CrashReporter-iOS";
 		};
 		DB36765C1AFC160C00C883CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 052A45CE136353FB00987004;
-			remoteInfo = "DemoCrash-iOS-Device";
-		};
-		DB36772D1AFC1AAE00C883CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB3676421AFC15D400C883CB;
-			remoteInfo = "CrashReporter-iOS";
+			remoteInfo = "DemoCrash-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -2900,7 +2893,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoCrash-iOS-Device.app/DemoCrash-iOS-Device";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoCrash-iOS.app/DemoCrash-iOS";
 				WARNING_CFLAGS = (
 					"$(inherited)",
 					"$(OTHER_WARNING_NO_ADDRESS)",
@@ -2932,7 +2925,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoCrash-iOS-Device.app/DemoCrash-iOS-Device";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoCrash-iOS.app/DemoCrash-iOS";
 				VALIDATE_PRODUCT = YES;
 				WARNING_CFLAGS = (
 					"$(inherited)",
@@ -3015,6 +3008,7 @@
 				DB3676581AFC15D500C883CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB3676591AFC15D500C883CB /* Build configuration list for PBXNativeTarget "Tests-iOS" */ = {
 			isa = XCConfigurationList;
@@ -3023,6 +3017,7 @@
 				DB36765B1AFC15D500C883CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
