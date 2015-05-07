@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "05CD31510EE936A9000FDE88"
-               BuildableName = "libCrashReporter-iphoneos.a"
-               BlueprintName = "CrashReporter-iOS-Device"
+               BlueprintIdentifier = "DB3676421AFC15D400C883CB"
+               BuildableName = "CrashReporter.framework"
+               BlueprintName = "CrashReporter-iOS"
+               ReferencedContainer = "container:CrashReporter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB36764C1AFC15D400C883CB"
+               BuildableName = "Tests-iOS.xctest"
+               BlueprintName = "Tests-iOS"
                ReferencedContainer = "container:CrashReporter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,6 +60,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB36764C1AFC15D400C883CB"
+               BuildableName = "Tests-iOS.xctest"
+               BlueprintName = "Tests-iOS"
+               ReferencedContainer = "container:CrashReporter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "05CD33230EE94439000FDE88"
                BuildableName = "Tests-iOS-Device.xctest"
                BlueprintName = "Tests-iOS-Device"
@@ -56,9 +80,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05CD31510EE936A9000FDE88"
-            BuildableName = "libCrashReporter-iphoneos.a"
-            BlueprintName = "CrashReporter-iOS-Device"
+            BlueprintIdentifier = "DB3676421AFC15D400C883CB"
+            BuildableName = "CrashReporter.framework"
+            BlueprintName = "CrashReporter-iOS"
             ReferencedContainer = "container:CrashReporter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +99,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05CD31510EE936A9000FDE88"
-            BuildableName = "libCrashReporter-iphoneos.a"
-            BlueprintName = "CrashReporter-iOS-Device"
+            BlueprintIdentifier = "DB3676421AFC15D400C883CB"
+            BuildableName = "CrashReporter.framework"
+            BlueprintName = "CrashReporter-iOS"
             ReferencedContainer = "container:CrashReporter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -93,9 +117,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05CD31510EE936A9000FDE88"
-            BuildableName = "libCrashReporter-iphoneos.a"
-            BlueprintName = "CrashReporter-iOS-Device"
+            BlueprintIdentifier = "DB3676421AFC15D400C883CB"
+            BuildableName = "CrashReporter.framework"
+            BlueprintName = "CrashReporter-iOS"
             ReferencedContainer = "container:CrashReporter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
