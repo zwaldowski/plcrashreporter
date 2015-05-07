@@ -428,14 +428,27 @@ plcrash_error_t plcrash_log_writer_init (plcrash_log_writer_t *writer,
         PLCF_DEBUG("Could not retrive kern.osversion: %s", strerror(errno));
     }
 
+#if TARGET_OS_IPHONE || TARGET_OS_MAC
+    NSProcessInfo *info = NSProcessInfo.processInfo;
+    
+    if ([info respondsToSelector:@selector(operatingSystemVersion)]) {
+        /* Fetch the major, minor, and bugfix versions if the modern API is available*/
+        NSOperatingSystemVersion version = info.operatingSystemVersion;
+        
+        /* Compose the string */
+        asprintf(&writer->system_info.version, "%" PRId64 ".%" PRId64 ".%" PRId64, (int64_t)version.majorVersion, (int64_t)version.minorVersion, (int64_t)version.patchVersion);
+    } else {
 #if TARGET_OS_IPHONE
-    /* iPhone OS */
-    writer->system_info.version = strdup([[[UIDevice currentDevice] systemVersion] UTF8String]);
+        if (UIDevice.class) {
+            /* iPhone OS */
+            writer->system_info.version = strdup(UIDevice.currentDevice.systemVersion.UTF8String);
+        } else {
+            writer->system_info.version = asprintf(&writer->system_info.version, "Unknown");
+        }
 #elif TARGET_OS_MAC
-    /* Mac OS X */
-    {
+        /* Mac OS X */
         SInt32 major, minor, bugfix;
-
+        
         /* Fetch the major, minor, and bugfix versions.
          * Fetching the OS version should not fail. */
         if (Gestalt(gestaltSystemVersionMajor, &major) != noErr) {
@@ -450,9 +463,10 @@ plcrash_error_t plcrash_log_writer_init (plcrash_log_writer_t *writer,
             PLCF_DEBUG("Could not retrieve system bugfix version with Gestalt");
             return PLCRASH_EINTERNAL;
         }
-
+        
         /* Compose the string */
         asprintf(&writer->system_info.version, "%" PRId32 ".%" PRId32 ".%" PRId32, (int32_t)major, (int32_t)minor, (int32_t)bugfix);
+#endif
     }
 #else
 #error Unsupported Platform
