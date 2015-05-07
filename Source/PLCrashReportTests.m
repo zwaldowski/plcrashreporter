@@ -144,7 +144,7 @@ static plcrash_error_t plcr_live_report_callback (plcrash_async_thread_state_t *
     plcrash_async_file_close(&file);
 
     /* Try to parse it */
-    PLCrashReport *crashLog = [[[PLCrashReport alloc] initWithData: [NSData dataWithContentsOfMappedFile: _logPath] error: &error] autorelease];
+    PLCrashReport *crashLog = [[[PLCrashReport alloc] initWithData: [NSData dataWithContentsOfFile: _logPath options: NSDataReadingMappedAlways error: &error] error: &error] autorelease];
     STAssertNotNil(crashLog, @"Could not decode crash log: %@", error);
 
     /* Report info */
